@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>工业企业经济业务会计核算</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --node-fill: #ECECFF; --node-border: #CCCCFF; --note-fill: #fff5ad; --note-border: #aaaa33; --cluster-fill: #ffffde  !important; --cluster-border: #aaaa33  !important; }
+.mermaid .label { color: var(--text-color); }
+.node rect, .node circle, .node ellipse, .node polygon { fill: var(--node-fill); stroke: var(--node-border); stroke-width: 1px; }
+.edgePath .path { stroke: var(--text-color); }
+.edgeLabel { background-color: var(--bg-color); }
+.cluster rect { fill: rgb(255, 255, 222) !important; rx: 4 !important; stroke: rgb(170, 170, 51) !important; stroke-width: 1px !important; }
+.cluster text { fill: var(--text-color); }
+.actor { stroke: var(--node-border); fill: var(--node-fill); }
+text.actor { fill: var(--text-color); stroke: none; }
+.actor-line { stroke: grey; }
+.messageLine0 { stroke-width: 1.5; stroke: var(--text-color); }
+.messageLine1 { stroke-width: 1.5; stroke: var(--text-color); }
+#arrowhead { fill: var(--text-color); }
+#crosshead path { fill: var(--text-color)  !important; stroke: var(--text-color)  !important; }
+.messageText { fill: var(--text-color); stroke: none; }
+.labelBox { stroke: var(--node-border); fill: var(--node-fill); }
+.labelText { fill: var(--text-color); stroke: none; }
+.loopText { fill: var(--text-color); stroke: none; }
+.loopLine { stroke-width: 2; stroke: var(--node-border); }
+.note { stroke: var(--note-border); fill: var(--note-fill); }
+.noteText { fill: var(--text-color); stroke: none; font-size: 14px; }
+.section { stroke: none; opacity: 0.2; }
+.section0 { fill: rgba(102, 102, 255, 0.49); }
+.section2 { fill: rgb(255, 244, 0); }
+.section1, .section3 { fill: white; opacity: 0.2; }
+.sectionTitle0 { fill: var(--text-color); }
+.sectionTitle1 { fill: var(--text-color); }
+.sectionTitle2 { fill: var(--text-color); }
+.sectionTitle3 { fill: var(--text-color); }
+.sectionTitle { text-anchor: start; font-size: 11px; }
+.grid .tick { stroke: lightgrey; opacity: 0.3; shape-rendering: crispEdges; }
+.grid path { stroke-width: 0; }
+.today { fill: none; stroke: red; stroke-width: 2px; }
+.task { stroke-width: 2; }
+.taskText { text-anchor: middle; font-size: 11px; }
+.taskTextOutsideRight { fill: black; text-anchor: start; font-size: 11px; }
+.taskTextOutsideLeft { fill: black; text-anchor: end; font-size: 11px; }
+.taskText0, .taskText1, .taskText2, .taskText3 { fill: white; }
+.task0, .task1, .task2, .task3 { fill: rgb(138, 144, 221); stroke: rgb(83, 79, 188); }
+.taskTextOutside0, .taskTextOutside2 { fill: var(--text-color); }
+.taskTextOutside1, .taskTextOutside3 { fill: var(--text-color); }
+.active0, .active1, .active2, .active3 { fill: rgb(191, 199, 255); stroke: rgb(83, 79, 188); }
+.activeText0, .activeText1, .activeText2, .activeText3 { fill: black !important; }
+.done0, .done1, .done2, .done3 { stroke: grey; fill: lightgrey; stroke-width: 2; }
+.doneText0, .doneText1, .doneText2, .doneText3 { fill: black !important; }
+.crit0, .crit1, .crit2, .crit3 { stroke: rgb(255, 136, 136); fill: red; stroke-width: 2; }
+.activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 { stroke: rgb(255, 136, 136); fill: rgb(191, 199, 255); stroke-width: 2; }
+.doneCrit0, .doneCrit1, .doneCrit2, .doneCrit3 { stroke: rgb(255, 136, 136); fill: lightgrey; stroke-width: 2; cursor: pointer; shape-rendering: crispEdges; }
+.doneCritText0, .doneCritText1, .doneCritText2, .doneCritText3 { fill: black !important; }
+.activeCritText0, .activeCritText1, .activeCritText2, .activeCritText3 { fill: black !important; }
+.titleText { text-anchor: middle; font-size: 18px; fill: black; }
+.node text { font-size: 14px; }
+div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-size: 12px; background: rgb(255, 255, 222); border: 1px solid rgb(170, 170, 51); border-radius: 2px; pointer-events: none; z-index: 100; }
+#write .md-diagram-panel .md-diagram-panel-preview div { width: initial; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+
+
+
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><div class="md-diagram-panel"><svg id="mermaidChart0" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 556.96875 519" style="max-width:556.96875px;"><style></style><style>#mermaidChart0 {
+    color: rgb(51, 51, 51);
+    font: normal normal 400 normal 14.4px / 23.04px "Lucida Console", Consolas, Courier, monospace;
+  }</style><g transform="translate(32, 32)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M178.62808719758064,206L324.203125,41.5L349.203125,41.5" marker-end="url(#arrowhead11)" style="fill:none"></path><defs><marker id="arrowhead11" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M197.65461189516128,206L324.203125,134.5L349.203125,134.5" marker-end="url(#arrowhead12)" style="fill:none"></path><defs><marker id="arrowhead12" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M299.203125,227.5L324.203125,227.5L363.609375,227.5" marker-end="url(#arrowhead13)" style="fill:none"></path><defs><marker id="arrowhead13" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M197.65461189516128,249L324.203125,320.5L363.609375,320.5" marker-end="url(#arrowhead14)" style="fill:none"></path><defs><marker id="arrowhead14" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M178.62808719758064,249L324.203125,413.5L349.203125,413.5" marker-end="url(#arrowhead15)" style="fill:none"></path><defs><marker id="arrowhead15" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="a" transform="translate(159.6015625,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-139.6015625" y="-21.5" width="279.203125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-129.6015625,-11.5)"><foreignObject width="259.203125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">工业企业经营过程中会计核算的五个阶段</div></foreignObject></g></g></g><g class="node" id="1.资金筹集阶段" transform="translate(411.0859375,41.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-61.8828125" y="-21.5" width="123.765625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-51.8828125,-11.5)"><foreignObject width="103.765625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">1.资金筹集阶段</div></foreignObject></g></g></g><g class="node" id="2.生产准备阶段" transform="translate(411.0859375,134.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-61.8828125" y="-21.5" width="123.765625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-51.8828125,-11.5)"><foreignObject width="103.765625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">2.生产准备阶段</div></foreignObject></g></g></g><g class="node" id="3.生产阶段" transform="translate(411.0859375,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-47.4765625" y="-21.5" width="94.953125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-37.4765625,-11.5)"><foreignObject width="74.953125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">3.生产阶段</div></foreignObject></g></g></g><g class="node" id="4.销售阶段" transform="translate(411.0859375,320.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-47.4765625" y="-21.5" width="94.953125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-37.4765625,-11.5)"><foreignObject width="74.953125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">4.销售阶段</div></foreignObject></g></g></g><g class="node" id="5.财务成果阶段" transform="translate(411.0859375,413.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-61.8828125" y="-21.5" width="123.765625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-51.8828125,-11.5)"><foreignObject width="103.765625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">5.财务成果阶段</div></foreignObject></g></g></g></g></g></g></svg></div><h3><a name='header-n2' class='md-header-anchor '></a>一、资金筹集业务的会计核算</h3><blockquote><h4><a name='header-n5' class='md-header-anchor '></a>筹集资金的来源：</h4><h5><a name='header-n6' class='md-header-anchor '></a>1.投资者</h5><ul><li>注册资本<br></li><li>实收资本（我国规定无论何种所有制企业均采用实收资本，且与注册资本必须一致)</li></ul><h5><a name='header-n11' class='md-header-anchor '></a>对应的会计账户：</h5><ul><li>银行存款</li><li>无形资产</li><li>实收资本</li></ul><h5><a name='header-n19' class='md-header-anchor '></a>2.债权人</h5><h5><a name='header-n21' class='md-header-anchor '></a>对应的会计账户：</h5><ul><li>短期借款</li><li>长期借款<br>
+两者区别：时间以年为限<br>
+用途:短期，企业临时周转<br>
+长期，为某项目(工程）</li></ul><h4><a name='header-n26' class='md-header-anchor '></a>短期借款利息的核算</h4><h5><a name='header-n28' class='md-header-anchor '></a>1.采用预提法(权责发生制)</h5><p>利息本身没有付给银行，但按权责发生制应该在账上确认，预先把利息费用进行确认。<br></p><h5><a name='header-n30' class='md-header-anchor '></a>2.直接确认法（收付实现制）<br></h5><p>一次性合并计算，主要针对信息质量要求与重要性原则：次要事项可简略描述</p></blockquote><h3><a name='header-n4' class='md-header-anchor '></a>二、生产准备阶段会计核算</h3><blockquote><h4><a name='header-n34' class='md-header-anchor '></a>常用账户：</h4><h5><a name='header-n35' class='md-header-anchor '></a>1、固定资产购置常用账户</h5><p><strong>a.固定资产</strong> <br>
+借方：增加固定资产的原始价值<br>
+贷方：减少固定资产的原始价值<br>
+余额：在借方，反映期未固定资产的原始价值<br><br>
+<strong>b.在建工程</strong> <br>
+借方：建造和安装过程中发生的全部支出<br>
+贷方：结转已完工工程的实际成本<br>
+余额在借方，反映当未完工工程的实际支出<br><br>
+<strong>c.应交税费一应交增值税</strong><br></p><h5><a name='header-n37' class='md-header-anchor '></a>2、原材料采购业务账户</h5><p><strong>a.在途物资</strong> <br>
+用以核算企业所有购入材料的买价和采购费用。<br>
+借方：购入材料的买价和采购费用<br>
+贷方：验收入库的材料采购成本<br>
+余额：在借方，表示在途材料的采购成本<br>
+<strong><em>应按材料类别设置明细分类账</em></strong><br><br>
+<strong>b.原材料</strong> <br>
+用以反映和监督各种材料的增减变动情况。<br>
+借方：验收入库的各种材料成本<br>
+贷方：已领用的材料成本<br>
+余额：在借方，表示库存的各种材料成本<br>
+<strong><em>应按原材料的品种和规格</em>，设置明细分类账</strong><br><br>
+<strong>c.应交税费一应交增值税</strong><br><br>
+<strong>d.其他科目</strong><br>
+应付账款、预付帐款应付票据<br>
+银行存款、库存现金等<br></p></blockquote><h3><a name='header-n33' class='md-header-anchor '></a>三、产品生产业务的会计核算</h3><blockquote><h4><a name='header-n41' class='md-header-anchor '></a>1、费用分类</h4><div class="md-diagram-panel"><svg id="mermaidChart1" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 945.515625 426" style="max-width:945.515625px;"><style></style><style>#mermaidChart1 {
+    color: rgb(119, 119, 119);
+    font: normal normal 400 normal 14.4px / 23.04px "Lucida Console", Consolas, Courier, monospace;
+  }</style><g transform="translate(32, 32)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M55.828125,156L93.8125,227.5L118.8125,227.5" marker-end="url(#arrowhead44)" style="fill:none"></path><defs><marker id="arrowhead44" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M55.828125,113L93.8125,41.5L118.8125,41.5" marker-end="url(#arrowhead45)" style="fill:none"></path><defs><marker id="arrowhead45" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M196.421875,41.5L221.421875,41.5L246.421875,41.5" marker-end="url(#arrowhead46)" style="fill:none"></path><defs><marker id="arrowhead46" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M172.36773353494624,206L221.421875,134.5L358.7578125,134.5" marker-end="url(#arrowhead47)" style="fill:none"></path><defs><marker id="arrowhead47" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M196.421875,227.5L221.421875,227.5L358.7578125,227.5" marker-end="url(#arrowhead48)" style="fill:none"></path><defs><marker id="arrowhead48" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M172.36773353494624,249L221.421875,320.5L358.7578125,320.5" marker-end="url(#arrowhead49)" style="fill:none"></path><defs><marker id="arrowhead49" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M436.3671875,134.5L573.703125,134.5L633.8270329301075,206" marker-end="url(#arrowhead50)" style="fill:none"></path><defs><marker id="arrowhead50" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M436.3671875,227.5L573.703125,227.5L598.703125,227.5" marker-end="url(#arrowhead51)" style="fill:none"></path><defs><marker id="arrowhead51" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M436.3671875,320.5L573.703125,320.5L633.8270329301075,249" marker-end="url(#arrowhead52)" style="fill:none"></path><defs><marker id="arrowhead52" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M688.064684139785,206L730.109375,181L755.109375,181" marker-end="url(#arrowhead53)" style="fill:none"></path><defs><marker id="arrowhead53" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M688.064684139785,249L730.109375,274L776.7109375,274" marker-end="url(#arrowhead54)" style="fill:none"></path><defs><marker id="arrowhead54" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="a" transform="translate(44.40625,134.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-24.40625" y="-21.5" width="48.8125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-14.40625,-11.5)"><foreignObject width="28.8125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">费用</div></foreignObject></g></g></g><g class="node" id="b" transform="translate(157.6171875,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">生产费用</div></foreignObject></g></g></g><g class="node" id="c" transform="translate(157.6171875,41.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">期间费用</div></foreignObject></g></g></g><g class="node" id="计入当期损益,从当期实现的收入中得到补偿" transform="translate(397.5625,41.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-151.140625" y="-21.5" width="302.28125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-141.140625,-11.5)"><foreignObject width="282.28125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">计入当期损益,从当期实现的收入中得到补偿</div></foreignObject></g></g></g><g class="node" id="e" transform="translate(397.5625,134.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">直接材料</div></foreignObject></g></g></g><g class="node" id="f" transform="translate(397.5625,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">直接人工</div></foreignObject></g></g></g><g class="node" id="g" transform="translate(397.5625,320.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">制造费用</div></foreignObject></g></g></g><g class="node" id="h" transform="translate(651.90625,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-21.5" width="106.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-11.5)"><foreignObject width="86.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">产品生产成本</div></foreignObject></g></g></g><g class="node" id="本期完工产品" transform="translate(808.3125,181)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-21.5" width="106.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-11.5)"><foreignObject width="86.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">本期完工产品</div></foreignObject></g></g></g><g class="node" id="在产品" transform="translate(808.3125,274)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.6015625" y="-21.5" width="63.203125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.6015625,-11.5)"><foreignObject width="43.203125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">在产品</div></foreignObject></g></g></g></g></g></g></svg></div><div class="md-diagram-panel"><svg id="mermaidChart2" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 694.03125 612" style="max-width:694.03125px;"><style></style><style>#mermaidChart2 {
+    color: rgb(119, 119, 119);
+    font: normal normal 400 normal 14.4px / 23.04px "Lucida Console", Consolas, Courier, monospace;
+  }</style><g transform="translate(32, 32)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M117.87781418010752,206L194.609375,134.5L219.609375,134.5" marker-end="url(#arrowhead78)" style="fill:none"></path><defs><marker id="arrowhead78" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M106.34125084005376,249L194.609375,413.5L234.0078125,413.5" marker-end="url(#arrowhead79)" style="fill:none"></path><defs><marker id="arrowhead79" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M308.97093413978496,113L351.015625,88L376.015625,88" marker-end="url(#arrowhead80)" style="fill:none"></path><defs><marker id="arrowhead80" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M290.8917170698925,156L351.015625,227.5L376.015625,227.5" marker-end="url(#arrowhead81)" style="fill:none"></path><defs><marker id="arrowhead81" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M444.3214045698925,66.5L478.625,41.5L503.625,41.5" marker-end="url(#arrowhead82)" style="fill:none"></path><defs><marker id="arrowhead82" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M444.3214045698925,109.5L478.625,134.5L503.625,134.5" marker-end="url(#arrowhead83)" style="fill:none"></path><defs><marker id="arrowhead83" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M453.625,227.5L478.625,227.5L518.0234375,227.5" marker-end="url(#arrowhead84)" style="fill:none"></path><defs><marker id="arrowhead84" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M290.8917170698925,392L351.015625,320.5L376.015625,320.5" marker-end="url(#arrowhead85)" style="fill:none"></path><defs><marker id="arrowhead85" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M311.6171875,413.5L351.015625,413.5L376.015625,413.5" marker-end="url(#arrowhead86)" style="fill:none"></path><defs><marker id="arrowhead86" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M290.8917170698925,435L351.015625,506.5L376.015625,506.5" marker-end="url(#arrowhead87)" style="fill:none"></path><defs><marker id="arrowhead87" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="a" transform="translate(94.8046875,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-74.8046875" y="-21.5" width="149.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-64.8046875,-11.5)"><foreignObject width="129.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">费用按经济用途分类</div></foreignObject></g></g></g><g class="node" id="b" transform="translate(272.8125,134.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-21.5" width="106.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-11.5)"><foreignObject width="86.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">生产成本费用</div></foreignObject></g></g></g><g class="node" id="c" transform="translate(272.8125,413.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">期间费用</div></foreignObject></g></g></g><g class="node" id="d" transform="translate(414.8203125,88)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">直接费用</div></foreignObject></g></g></g><g class="node" id="e" transform="translate(414.8203125,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">间接费用</div></foreignObject></g></g></g><g class="node" id="直接材料费用" transform="translate(556.828125,41.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-21.5" width="106.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-11.5)"><foreignObject width="86.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">直接材料费用</div></foreignObject></g></g></g><g class="node" id="直接人工费用" transform="translate(556.828125,134.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-21.5" width="106.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-11.5)"><foreignObject width="86.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">直接人工费用</div></foreignObject></g></g></g><g class="node" id="制造费用" transform="translate(556.828125,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">制造费用</div></foreignObject></g></g></g><g class="node" id="销售费用" transform="translate(414.8203125,320.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">销售费用</div></foreignObject></g></g></g><g class="node" id="管理费用" transform="translate(414.8203125,413.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">管理费用</div></foreignObject></g></g></g><g class="node" id="财务费用" transform="translate(414.8203125,506.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">财务费用</div></foreignObject></g></g></g></g></g></g></svg></div><h4><a name='header-n44' class='md-header-anchor '></a>2、常用账户</h4><h5><a name='header-n45' class='md-header-anchor '></a>(1)生产成本</h5><p>借：生产发生的各种成本费用（包括间接费用）<br>
+贷：验收入库的产品实际成本<br>
+余额：借余，尚未完工的在产品成本<br>
+<strong><em>按照产品类别设置明细账</em></strong></p><h5><a name='header-n47' class='md-header-anchor '></a>(2)制造费用</h5><p><strong><em>反映为生产产品和提供劳务而发生的各项间接费用的帐户</em></strong><br>
+借：登记发生的全部制造费用<br>
+贷：登记转入&quot;生产成本&quot;借方由各产品负担的制造费用<br>
+余额：月末一般无余额<br></p><h5><a name='header-n49' class='md-header-anchor '></a>(3)应付职工薪酬</h5><p>借：本月实际支付的职工薪酬<br>
+贷：本月结算的应付职工薪酬<br>
+余额：<br>借余，表示相实发薪酬大于应付薪酬的差额，即为多付的薪酬<br>
+贷余，表示相应付薪酬大于实发薪酬的差额，即应付未付的薪酬<br></p><h5><a name='header-n51' class='md-header-anchor '></a>(4)库存商品</h5><p><strong><em>反映已经生产完工</em>，并已验收入库的可以出售的产成品的实际成本</strong><br>
+借：入库产成品实际成本<br>
+贷：以销售产品实际成本<br>
+余额：借余，库存产品的实际成本<br>
+<strong><em>按照产品类别设置明细账</em></strong><br></p><h4><a name='header-n53' class='md-header-anchor '></a>3、主要会计核算</h4><h5><a name='header-n54' class='md-header-anchor '></a>(1)领用原材料，投入生产<br></h5><p>借：生产成本<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;制造费用<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;管理费用<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贷：原材料<br></p><h5><a name='header-n56' class='md-header-anchor '></a>(2)分配职工薪酬</h5><p>借：生产成本<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;制造费用<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;管理费用<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贷：应付职工薪酬<br></p><h5><a name='header-n58' class='md-header-anchor '></a>(3)计提累计折旧</h5><p>借：生产成本<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;制造费用<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;管理费用<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贷：累计折旧<br></p><h5><a name='header-n60' class='md-header-anchor '></a>(4)分配制造费用</h5><p>借：生产成本<br>
+&nbsp;&nbsp;&nbsp;&nbsp;贷：制造费用<br></p><h5><a name='header-n62' class='md-header-anchor '></a>(5)产品完工入库</h5><p>借：库存商品<br>
+&nbsp;&nbsp;&nbsp;&nbsp;贷：生产成本<br></p><h4><a name='header-n64' class='md-header-anchor '></a>制造费用的分配步骤</h4><p>1.分配标准(工资、工时等)<br>
+2.计算分配率<br>
+3.进行分配<br>
+<code>$分配率= \frac{待分配的制造费用总额}{分配之和}$</code></p><h4><a name='header-n66' class='md-header-anchor '></a>4、产品生产成本计算</h4><h5><a name='header-n67' class='md-header-anchor '></a>(1)产品生产成本计算方法</h5><p><strong>制造成本法：</strong> 只有跟生产产品有关系的才计入生产成本中（直接材料，直接人工，制造费用)<br>
+<strong>完全成本法：</strong> 所有费用都归入产品的成本中（直接材料，直接人工，制造费用，期间费用)<br></p><h5><a name='header-n69' class='md-header-anchor '></a>(2)产品生产成本计算的一般程序</h5><ul><li><strong>确定计算对象（一般按产品品种)</strong><br>
+a. 以产品品种<br>
+b、以生产步骤<br>
+C、以产品批次<br></li><li><strong>确定成本计算期（一般按月计算)：</strong> 就是成本计算的间隔期<br>
+a. 以月为成本计算期<br>
+b. 以产品的生产周期为成本计算期(单件小批量生产)<br></li><li><strong>确定成本项目(料、工、费)：</strong> 生产费用按经济用途分类的项目<br>
+a.直接材料<br>
+b.直接人工<br>
+c.制造费用<br></li><li><strong>正确归集和分配生产费用</strong><br>
+单一产品生产的场合<br>
+几种产品同时生产的场合<br></li></ul><div class="md-diagram-panel"><svg id="mermaidChart3" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 438.8125 426" style="max-width:438.8125px;"><style></style><style>#mermaidChart3 {
+    color: rgb(119, 119, 119);
+    font: normal normal 400 normal 14.4px / 23.04px "Lucida Console", Consolas, Courier, monospace;
+  }</style><g transform="translate(32, 32)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M126.8043234767025,159.5L223.40625,41.5L248.40625,41.5" marker-end="url(#arrowhead97)" style="fill:none"></path><defs><marker id="arrowhead97" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M162.00672043010752,159.5L223.40625,134.5L248.40625,134.5" marker-end="url(#arrowhead98)" style="fill:none"></path><defs><marker id="arrowhead98" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M162.00672043010752,202.5L223.40625,227.5L262.8046875,227.5" marker-end="url(#arrowhead99)" style="fill:none"></path><defs><marker id="arrowhead99" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M126.8043234767025,202.5L223.40625,320.5L248.40625,320.5" marker-end="url(#arrowhead100)" style="fill:none"></path><defs><marker id="arrowhead100" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="a" transform="translate(109.203125,181)" style="opacity: 1;"><rect rx="0" ry="0" x="-89.203125" y="-21.5" width="178.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-79.203125,-11.5)"><foreignObject width="158.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">涉及间接费用的分配标准</div></foreignObject></g></g></g><g class="node" id="生产工人工时" transform="translate(301.609375,41.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-21.5" width="106.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-11.5)"><foreignObject width="86.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">生产工人工时</div></foreignObject></g></g></g><g class="node" id="生产工人工资" transform="translate(301.609375,134.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-21.5" width="106.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-11.5)"><foreignObject width="86.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">生产工人工资</div></foreignObject></g></g></g><g class="node" id="机器工时" transform="translate(301.609375,227.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.8046875" y="-21.5" width="77.609375" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.8046875,-11.5)"><foreignObject width="57.609375" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">机器工时</div></foreignObject></g></g></g><g class="node" id="有关消耗定额" transform="translate(301.609375,320.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-21.5" width="106.40625" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-11.5)"><foreignObject width="86.40625" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">有关消耗定额</div></foreignObject></g></g></g></g></g></g></svg></div><ul><li><strong>将费用在完工产品和在产品之间进行分配</strong><br>
+(1)成本计算期与生产周期一致时，则期末所有产品都是完工产品，不存在完工产品与期末产品的费用分配问题。<br>
+(2)成本计算期与生产周期不一致时，则期末既有完工产品又有期末在产品。<br></li><li><strong>完工产品与期末在产品成本间关系公式表示：</strong><br>
+期初在产品成本 + 本期生产费用=本期完工产品成本+期末在产品成本<br>
+本期完工产品成本=期初在产品成本 + 本期生产费用 - <strong>期末在产品成本</strong><br>
+期未在产品成本=期初在产品成本 + 本期生产费用- <strong>本期完工产品成本</strong><br></li><li>设置和登记费用成本明细账，编制成本计算表</li></ul></blockquote><h3><a name='header-n40' class='md-header-anchor '></a>四、应交增值税</h3><blockquote><div class="md-diagram-panel"><svg id="mermaidChart4" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 427.359375 240" style="max-width:427.359375px;"><style></style><style>#mermaidChart4 {
+    color: rgb(119, 119, 119);
+    font: normal normal 400 normal 14.4px / 23.04px "Lucida Console", Consolas, Courier, monospace;
+  }</style><g transform="translate(32, 32)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M147.29166666666666,66.5L203.28125,41.5L228.28125,41.5" marker-end="url(#arrowhead108)" style="fill:none"></path><defs><marker id="arrowhead108" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M147.29166666666666,109.5L203.28125,134.5L228.28125,134.5" marker-end="url(#arrowhead109)" style="fill:none"></path><defs><marker id="arrowhead109" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="a" transform="translate(99.140625,88)" style="opacity: 1;"><rect rx="0" ry="0" x="-79.140625" y="-21.5" width="158.28125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-69.140625,-11.5)"><foreignObject width="138.28125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">应交增值税-三级科目</div></foreignObject></g></g></g><g class="node" id="进项税,记借方" transform="translate(285.8203125,41.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-57.5390625" y="-21.5" width="115.078125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-47.5390625,-11.5)"><foreignObject width="95.078125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">进项税,记借方</div></foreignObject></g></g></g><g class="node" id="销项税,记贷方" transform="translate(285.8203125,134.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-57.5390625" y="-21.5" width="115.078125" height="43"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-47.5390625,-11.5)"><foreignObject width="95.078125" height="23"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;">销项税,记贷方</div></foreignObject></g></g></g></g></g></g></svg></div><p><span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.223ex" height="2.461ex" viewBox="0 -806.1 8707.3 1059.4" role="img" focusable="false" style="vertical-align: -0.588ex;"><defs><path stroke-width="0" id="E1-MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="0" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">进</text><g transform="translate(892,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">项</text></g><use xlink:href="#E1-MJMAIN-2212" x="2007" y="0"></use><g transform="translate(3008,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">销</text></g><g transform="translate(3868,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">项</text></g><use xlink:href="#E1-MJMAIN-3D" x="5038" y="0"></use><g transform="translate(6094,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">增</text></g><g transform="translate(6954,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">值</text></g><g transform="translate(7847,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">税</text></g></g></svg></span><script type="math/tex">进项 - 销项 = 增值税</script><br>
+<strong><em>增值税始终由买方付给卖方</em>，最终承担者是消费者，跟企业利润没有关系。</strong><br></p><h4><a name='header-n90' class='md-header-anchor '></a>1、增值税类型</h4><p><strong>消费型：</strong> 可以在借方进行固定资产增值税抵扣(当前我国使用的类型）<br>
+<strong>生产型：</strong> 不可以在借方进行固定资产增值税抵扣<br>
+<strong>收入型：</strong> 本期允许在借方进行抵扣的进项税仅限于固定资产计提折旧的部分(理论上比较科学，但实际操作不便)<br>
+<strong>区别原理：</strong> 固定资产的增值税能不能在借方抵扣。<br><br>
+<strong>增值税是价外税(价税分离)，如果已知的是含税价，则应该转化为不含税价进行价税分离：</strong><br>
+<span class="MathJax_SVG" tabindex="-1" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="21.329ex" height="3.978ex" viewBox="0 -1107.7 9183.2 1712.8" role="img" focusable="false" style="vertical-align: -1.405ex;"><defs><path stroke-width="0" id="E2-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="0" id="E2-MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="0" id="E2-MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">不</text><g transform="translate(892,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">含</text></g><g transform="translate(1785,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">税</text></g><g transform="translate(2645,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(50.259) matrix(1 0 0 -1 0 0)">价</text></g><use xlink:href="#E2-MJMAIN-3D" x="3816" y="0"></use><g transform="translate(4594,0)"><g transform="translate(397,0)"><rect stroke="none" width="4071" height="60" x="0" y="220"></rect><g transform="translate(1100,522)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(35.539) matrix(1 0 0 -1 0 0)">含</text><g transform="translate(631,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(35.539) matrix(1 0 0 -1 0 0)">税</text></g><g transform="translate(1239,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(35.539) matrix(1 0 0 -1 0 0)">价</text></g></g><g transform="translate(60,-418)"><use transform="scale(0.707)" xlink:href="#E2-MJMAIN-31" x="0" y="0"></use><use transform="scale(0.707)" xlink:href="#E2-MJMAIN-2B" x="500" y="0"></use><g transform="translate(903,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(35.539) matrix(1 0 0 -1 0 0)">增</text></g><g transform="translate(1511,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(35.539) matrix(1 0 0 -1 0 0)">值</text></g><g transform="translate(2143,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(35.539) matrix(1 0 0 -1 0 0)">税</text></g><g transform="translate(2751,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(35.539) matrix(1 0 0 -1 0 0)">税</text></g><g transform="translate(3359,0)"><text font-family="STIXGeneral,'Arial Unicode MS',serif" stroke="none" transform="scale(35.539) matrix(1 0 0 -1 0 0)">率</text></g></g></g></g></g></svg></span><script type="math/tex">不含税价= \frac{含税价}{1 + 增值税税率}</script><br>
+增值税 = 不含税价*增值税税率<br>
+<strong>如果是零售价既为含税价</strong></p></blockquote></div>
+</body>
+</html>
